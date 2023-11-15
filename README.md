@@ -24,11 +24,11 @@ namespace REPLACEWITHNAMEOFPROJECT.Data
             base.OnModelCreating(builder);
         }
 5. In Programs.cs, change IdentityUser to ApplicationUser in AddDefaultIdentity.
-6. In Areas/Identity/Pages/Shared/_LoginPartial, change from IdentityUser to ApplicationUser (needs reference to Data folder).
-7. Install NuGet for SQLite (Manage NuGet Packages).
-8. In Program.cs, replace UsqSqlServer with UseSqlite.
-9. Replace value in ConnectionsStrings.DefaultConnection with "Data Source = REPLACEWITHDATABASENAME.db".
-10. Remove existing migrations (Remove-Migration in Package Manager Consolethis) This step avoids getting the error sqlite error 1 'near max syntax error' - due to nvarchar(max) included for existing migrations for SQLServer database).
+6. In Areas/Identity/Pages/Shared/_LoginPartial and Areas/Identity/Pages/Account/LogOut, change from IdentityUser to ApplicationUser (needs reference to Data folder).
+8. Install NuGet for SQLite (Manage NuGet Packages).
+9. In Program.cs, replace UsqSqlServer with UseSqlite.
+10. Replace value in ConnectionsStrings.DefaultConnection with "Data Source = REPLACEWITHDATABASENAME.db".
+11. Remove existing migrations (Remove-Migration in Package Manager Consolethis) This step avoids getting the error sqlite error 1 'near max syntax error' - due to nvarchar(max) included for existing migrations for SQLServer database).
 12. Add a migration called Initial (Add-Migration REPLACEWITHMIGRATIONNAME in Package Manager Console).
 13. Update the database (Update-Database in Package Manager Console).
 14. Test user registration.
